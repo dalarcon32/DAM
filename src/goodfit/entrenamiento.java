@@ -52,6 +52,15 @@ public class entrenamiento extends javax.swing.JDialog {
         lblPrecio = new javax.swing.JLabel();
         txtPrecio = new javax.swing.JTextField();
         lblEuro = new javax.swing.JLabel();
+        jPanelUbicacion = new javax.swing.JPanel();
+        lblUbicacion = new javax.swing.JLabel();
+        cmbUbicacion = new javax.swing.JComboBox();
+        chbBancos = new javax.swing.JCheckBox();
+        chbBicicleta = new javax.swing.JCheckBox();
+        chbCinta = new javax.swing.JCheckBox();
+        chbMultifuncion = new javax.swing.JCheckBox();
+        chbPalancas = new javax.swing.JCheckBox();
+        chbPlacas = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setName("Form"); // NOI18N
@@ -196,6 +205,92 @@ public class entrenamiento extends javax.swing.JDialog {
         lblEuro.setText(resourceMap.getString("lblEuro.text")); // NOI18N
         lblEuro.setName("lblEuro"); // NOI18N
 
+        jPanelUbicacion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanelUbicacion.setName("jPanelUbicacion"); // NOI18N
+
+        lblUbicacion.setText(resourceMap.getString("lblUbicacion.text")); // NOI18N
+        lblUbicacion.setName("lblUbicacion"); // NOI18N
+
+        cmbUbicacion.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "Sala Cross", "Sala Fitness", "Sala Musculación" }));
+        cmbUbicacion.setName("cmbUbicacion"); // NOI18N
+        cmbUbicacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbUbicacionActionPerformed(evt);
+            }
+        });
+
+        chbBancos.setText(resourceMap.getString("chbBancos.text")); // NOI18N
+        chbBancos.setEnabled(false);
+        chbBancos.setName("chbBancos"); // NOI18N
+
+        chbBicicleta.setText(resourceMap.getString("chbBicicleta.text")); // NOI18N
+        chbBicicleta.setEnabled(false);
+        chbBicicleta.setName("chbBicicleta"); // NOI18N
+
+        chbCinta.setText(resourceMap.getString("chbCinta.text")); // NOI18N
+        chbCinta.setEnabled(false);
+        chbCinta.setName("chbCinta"); // NOI18N
+
+        chbMultifuncion.setText(resourceMap.getString("chbMultifuncion.text")); // NOI18N
+        chbMultifuncion.setEnabled(false);
+        chbMultifuncion.setName("chbMultifuncion"); // NOI18N
+
+        chbPalancas.setText(resourceMap.getString("chbPalancas.text")); // NOI18N
+        chbPalancas.setEnabled(false);
+        chbPalancas.setName("chbPalancas"); // NOI18N
+
+        chbPlacas.setText(resourceMap.getString("chbPlacas.text")); // NOI18N
+        chbPlacas.setEnabled(false);
+        chbPlacas.setName("chbPlacas"); // NOI18N
+
+        javax.swing.GroupLayout jPanelUbicacionLayout = new javax.swing.GroupLayout(jPanelUbicacion);
+        jPanelUbicacion.setLayout(jPanelUbicacionLayout);
+        jPanelUbicacionLayout.setHorizontalGroup(
+            jPanelUbicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelUbicacionLayout.createSequentialGroup()
+                .addGroup(jPanelUbicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelUbicacionLayout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(lblUbicacion)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cmbUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelUbicacionLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanelUbicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelUbicacionLayout.createSequentialGroup()
+                                .addComponent(chbBancos)
+                                .addGap(71, 71, 71)
+                                .addComponent(chbBicicleta))
+                            .addGroup(jPanelUbicacionLayout.createSequentialGroup()
+                                .addComponent(chbMultifuncion)
+                                .addGap(18, 18, 18)
+                                .addComponent(chbPalancas)))
+                        .addGap(69, 69, 69)
+                        .addGroup(jPanelUbicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(chbCinta)
+                            .addComponent(chbPlacas))))
+                .addContainerGap(62, Short.MAX_VALUE))
+        );
+        jPanelUbicacionLayout.setVerticalGroup(
+            jPanelUbicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelUbicacionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelUbicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblUbicacion)
+                    .addComponent(cmbUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelUbicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chbBancos)
+                    .addComponent(chbBicicleta)
+                    .addComponent(chbCinta))
+                .addGap(38, 38, 38)
+                .addGroup(jPanelUbicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(chbMultifuncion)
+                    .addComponent(chbPalancas)
+                    .addComponent(chbPlacas))
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -239,7 +334,10 @@ public class entrenamiento extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblEuro)))
+                        .addComponent(lblEuro))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanelUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -272,7 +370,9 @@ public class entrenamiento extends javax.swing.JDialog {
                     .addComponent(lblPrecio)
                     .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblEuro))
-                .addContainerGap(286, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanelUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         pack();
@@ -357,6 +457,10 @@ public class entrenamiento extends javax.swing.JDialog {
           this.txtPrecio.setText("");
     }//GEN-LAST:event_txtPrecioFocusLost
 
+    private void cmbUbicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbUbicacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbUbicacionActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -437,8 +541,16 @@ public class entrenamiento extends javax.swing.JDialog {
     }
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox chbBancos;
+    private javax.swing.JCheckBox chbBicicleta;
+    private javax.swing.JCheckBox chbCinta;
+    private javax.swing.JCheckBox chbMultifuncion;
+    private javax.swing.JCheckBox chbPalancas;
+    private javax.swing.JCheckBox chbPlacas;
+    private javax.swing.JComboBox cmbUbicacion;
     private javax.swing.ButtonGroup grpTipo;
     private javax.swing.JPanel jPanelTipo;
+    private javax.swing.JPanel jPanelUbicacion;
     private javax.swing.JLabel lblCodigo;
     private javax.swing.JLabel lblEntrenador;
     private javax.swing.JLabel lblEntrenamiento;
@@ -447,6 +559,7 @@ public class entrenamiento extends javax.swing.JDialog {
     private javax.swing.JLabel lblPrecio;
     private javax.swing.JLabel lblTelefono;
     private javax.swing.JLabel lblTipo;
+    private javax.swing.JLabel lblUbicacion;
     private javax.swing.JRadioButton rdoCrossfit;
     private javax.swing.JRadioButton rdoFisico;
     private javax.swing.JRadioButton rdoFuerza;
