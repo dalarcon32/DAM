@@ -205,7 +205,7 @@ public class entrenamiento extends javax.swing.JDialog {
         lblEuro.setText(resourceMap.getString("lblEuro.text")); // NOI18N
         lblEuro.setName("lblEuro"); // NOI18N
 
-        jPanelUbicacion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanelUbicacion.setBorder(new javax.swing.border.MatteBorder(null));
         jPanelUbicacion.setName("jPanelUbicacion"); // NOI18N
 
         lblUbicacion.setText(resourceMap.getString("lblUbicacion.text")); // NOI18N
@@ -372,7 +372,7 @@ public class entrenamiento extends javax.swing.JDialog {
                     .addComponent(lblEuro))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanelUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         pack();
@@ -459,6 +459,40 @@ public class entrenamiento extends javax.swing.JDialog {
 
     private void cmbUbicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbUbicacionActionPerformed
         // TODO add your handling code here:
+       
+       int item = cmbUbicacion.getSelectedIndex();   
+        if(item==1){
+         chbBancos.setEnabled(true); 
+         chbBicicleta.setEnabled(true);
+         chbCinta.setEnabled(true);
+         chbMultifuncion.setEnabled(true);
+         chbPalancas.setEnabled(true);
+         chbPlacas.setEnabled(true);
+        } else if(item==2){
+         chbBancos.setEnabled(false); 
+         chbBicicleta.setEnabled(false);
+         chbCinta.setEnabled(false);
+         chbMultifuncion.setEnabled(false);
+         chbPalancas.setEnabled(true);
+         chbPlacas.setEnabled(true);
+        }
+  
+        else if(item==3){
+         chbBancos.setEnabled(true); 
+         chbBicicleta.setEnabled(false);
+         chbCinta.setEnabled(false);
+         chbMultifuncion.setEnabled(true);
+         chbPalancas.setEnabled(false);
+         chbPlacas.setEnabled(false);    
+        } else{
+         chbBancos.setEnabled(false); 
+         chbBicicleta.setEnabled(false);
+         chbCinta.setEnabled(false);
+         chbMultifuncion.setEnabled(false);
+         chbPalancas.setEnabled(false);
+         chbPlacas.setEnabled(false);    
+        }
+        
     }//GEN-LAST:event_cmbUbicacionActionPerformed
 
     /**
@@ -508,35 +542,59 @@ public class entrenamiento extends javax.swing.JDialog {
     public void marcarCasillas() {
         int item = cmbUbicacion.getSelectedIndex();   
         if(item==1){
-         chbBancos.setEnabled(true); 
+         chbBancos.setEnabled(true);
+         chbBancos.setSelected(false);
          chbBicicleta.setEnabled(true);
+         chbBicicleta.setSelected(false);
          chbCinta.setEnabled(true);
+         chbCinta.setSelected(false);
          chbMultifuncion.setEnabled(true);
+         chbMultifuncion.setSelected(false);
          chbPalancas.setEnabled(true);
+         chbPalancas.setSelected(false);
          chbPlacas.setEnabled(true);
+         chbPlacas.setSelected(false);
         } else if(item==2){
          chbBancos.setEnabled(false); 
+         chbBancos.setSelected(false);
          chbBicicleta.setEnabled(false);
+         chbBicicleta.setSelected(false);
          chbCinta.setEnabled(false);
+         chbCinta.setSelected(false);
          chbMultifuncion.setEnabled(false);
+         chbMultifuncion.setSelected(false);
          chbPalancas.setEnabled(true);
+         chbPalancas.setSelected(false);
          chbPlacas.setEnabled(true);
+         chbPlacas.setSelected(false);
         }
   
         else if(item==3){
          chbBancos.setEnabled(true); 
+         chbBancos.setSelected(false);
          chbBicicleta.setEnabled(false);
+         chbBicicleta.setSelected(false);
          chbCinta.setEnabled(false);
-         chbMultifuncion.setEnabled(true);
+         chbCinta.setSelected(false);
+         chbMultifuncion.setEnabled(false);
+         chbMultifuncion.setSelected(false);
          chbPalancas.setEnabled(false);
-         chbPlacas.setEnabled(false);    
+         chbPalancas.setSelected(false);
+         chbPlacas.setEnabled(true);
+         chbPlacas.setSelected(false);  
         } else{
          chbBancos.setEnabled(false); 
+         chbBancos.setSelected(false);
          chbBicicleta.setEnabled(false);
+         chbBicicleta.setSelected(false);
          chbCinta.setEnabled(false);
+         chbCinta.setSelected(false);
          chbMultifuncion.setEnabled(false);
+         chbMultifuncion.setSelected(false);
          chbPalancas.setEnabled(false);
-         chbPlacas.setEnabled(false);    
+         chbPalancas.setSelected(false);
+         chbPlacas.setEnabled(false);
+         chbPlacas.setSelected(false) ;   
         }
     }
    
