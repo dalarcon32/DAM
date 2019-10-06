@@ -355,8 +355,14 @@ public class entrenamiento extends javax.swing.JDialog {
         btnCancelar.setText(resourceMap.getString("btnCancelar.text")); // NOI18N
         btnCancelar.setName("btnCancelar"); // NOI18N
 
+        btnAceptar.setAction(actionMap.get("Aceptar")); // NOI18N
         btnAceptar.setText(resourceMap.getString("btnAceptar.text")); // NOI18N
         btnAceptar.setName("btnAceptar"); // NOI18N
+        btnAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -606,6 +612,10 @@ public class entrenamiento extends javax.swing.JDialog {
                cmbArea.setEnabled(false);        // TODO add your handling code here:
     }//GEN-LAST:event_rdoFuncionalActionPerformed
 
+    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAceptarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -747,6 +757,45 @@ public class entrenamiento extends javax.swing.JDialog {
         }
             
     }
+
+    @Action
+    public void Aceptar() {
+        System.out.println("Cancelar");
+        int enc =0;
+        if(txtCodigo.getText()!="" || txtEntrenamiento.getText()!=""){
+          
+            enc=1;  
+            System.out.println("Cancelar 1: "+ enc+ txtCodigo.getText());
+        }
+        else if (rdoMuscular.isSelected() || rdoCrossfit.isSelected() || rdoFisico.isSelected() || rdoFuerza.isSelected() ||rdoFuncional.isSelected() || rdoRunning.isSelected())
+        {
+            enc=1;
+            System.out.println("Cancelar 2: "+ enc);
+            
+        }
+        else if (txtEntrenador.getText()!="" || txtTelefono.getText()!="" || txtPrecio.getText()!="")
+        {
+           System.out.println("Cancelar 3: "+ enc);
+            enc=1;
+        }
+
+        else if (cmbUbicacion.getSelectedIndex()!=0){
+            {
+                System.out.println("Cancelar 4: "+ enc);
+                enc=1;
+            }
+        }
+        System.out.println("aceptar: "+ enc);
+        if(enc==1){
+             if (aceptar == null) {
+            JFrame mainFrame = GoodFitApp.getApplication().getMainFrame();
+            aceptar = new aceptar(mainFrame, true);
+            aceptar.setLocationRelativeTo(mainFrame);
+        }
+        GoodFitApp.getApplication().show(aceptar);
+        }
+    
+    }
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptar;
@@ -786,4 +835,5 @@ public class entrenamiento extends javax.swing.JDialog {
     private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
     private JDialog cancelar;
+    private JDialog aceptar;
 }
