@@ -30,18 +30,19 @@ public class entrenamiento extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        grpTipo = new javax.swing.ButtonGroup();
         lblCodigo = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
         lblEntrenamiento = new javax.swing.JLabel();
         txtEntrentamiento = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         lblTipo = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
+        rdoMuscular = new javax.swing.JRadioButton();
+        rdoFuncional = new javax.swing.JRadioButton();
+        rdoCrossfit = new javax.swing.JRadioButton();
+        rdoFuerza = new javax.swing.JRadioButton();
+        rdoRunning = new javax.swing.JRadioButton();
+        rdoFisico = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setName("Form"); // NOI18N
@@ -53,29 +54,40 @@ public class entrenamiento extends javax.swing.JDialog {
         txtCodigo.setText(resourceMap.getString("txtCodigo.text")); // NOI18N
         txtCodigo.setName("txtCodigo"); // NOI18N
 
+        lblEntrenamiento.setText(resourceMap.getString("lblEntrenamiento.text")); // NOI18N
         lblEntrenamiento.setName("lblEntrenamiento"); // NOI18N
 
         txtEntrentamiento.setName("txtEntrentamiento"); // NOI18N
 
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setName("jPanel1"); // NOI18N
 
         lblTipo.setText(resourceMap.getString("lblTipo.text")); // NOI18N
         lblTipo.setName("lblTipo"); // NOI18N
 
-        jRadioButton1.setText(resourceMap.getString("jRadioButton1.text")); // NOI18N
-        jRadioButton1.setName("jRadioButton1"); // NOI18N
+        grpTipo.add(rdoMuscular);
+        rdoMuscular.setText(resourceMap.getString("rdoMuscular.text")); // NOI18N
+        rdoMuscular.setName("rdoMuscular"); // NOI18N
 
-        jRadioButton2.setText(resourceMap.getString("jRadioButton2.text")); // NOI18N
-        jRadioButton2.setName("jRadioButton2"); // NOI18N
+        grpTipo.add(rdoFuncional);
+        rdoFuncional.setText(resourceMap.getString("rdoFuncional.text")); // NOI18N
+        rdoFuncional.setName("rdoFuncional"); // NOI18N
 
-        jRadioButton3.setText(resourceMap.getString("jRadioButton3.text")); // NOI18N
-        jRadioButton3.setName("jRadioButton3"); // NOI18N
+        grpTipo.add(rdoCrossfit);
+        rdoCrossfit.setText(resourceMap.getString("rdoCrossfit.text")); // NOI18N
+        rdoCrossfit.setName("rdoCrossfit"); // NOI18N
 
-        jRadioButton4.setText(resourceMap.getString("jRadioButton4.text")); // NOI18N
-        jRadioButton4.setName("jRadioButton4"); // NOI18N
+        grpTipo.add(rdoFuerza);
+        rdoFuerza.setText(resourceMap.getString("rdoFuerza.text")); // NOI18N
+        rdoFuerza.setName("rdoFuerza"); // NOI18N
 
-        jRadioButton5.setText(resourceMap.getString("jRadioButton5.text")); // NOI18N
-        jRadioButton5.setName("jRadioButton5"); // NOI18N
+        grpTipo.add(rdoRunning);
+        rdoRunning.setText(resourceMap.getString("rdoRunning.text")); // NOI18N
+        rdoRunning.setName("rdoRunning"); // NOI18N
+
+        grpTipo.add(rdoFisico);
+        rdoFisico.setText(resourceMap.getString("rdoFisico.text")); // NOI18N
+        rdoFisico.setName("rdoFisico"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -85,18 +97,22 @@ public class entrenamiento extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblTipo)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(jRadioButton1)
+                        .addComponent(rdoMuscular)
                         .addGap(18, 18, 18)
-                        .addComponent(jRadioButton2)
+                        .addComponent(rdoFuncional)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButton3)
+                        .addComponent(rdoCrossfit)
                         .addGap(63, 63, 63)
-                        .addComponent(jRadioButton4)
+                        .addComponent(rdoFuerza)
                         .addGap(18, 18, 18)
-                        .addComponent(jRadioButton5))
-                    .addComponent(lblTipo))
-                .addContainerGap(336, Short.MAX_VALUE))
+                        .addComponent(rdoRunning)
+                        .addGap(37, 37, 37)
+                        .addComponent(rdoFisico)
+                        .addGap(0, 60, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,12 +120,13 @@ public class entrenamiento extends javax.swing.JDialog {
                 .addComponent(lblTipo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4)
-                    .addComponent(jRadioButton5))
-                .addGap(0, 116, Short.MAX_VALUE))
+                    .addComponent(rdoMuscular)
+                    .addComponent(rdoFuncional)
+                    .addComponent(rdoCrossfit)
+                    .addComponent(rdoFuerza)
+                    .addComponent(rdoRunning)
+                    .addComponent(rdoFisico))
+                .addGap(0, 18, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -117,20 +134,21 @@ public class entrenamiento extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(9, 9, 9)
-                                .addComponent(lblEntrenamiento))
-                            .addComponent(lblCodigo))
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtEntrentamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(lblEntrenamiento)
+                        .addGap(39, 39, 39)
+                        .addComponent(txtEntrentamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblCodigo)
+                        .addGap(39, 39, 39)
+                        .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(428, 428, 428))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,13 +157,13 @@ public class entrenamiento extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblCodigo))
-                .addGap(32, 32, 32)
-                .addComponent(txtEntrentamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(lblEntrenamiento)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(48, 48, 48)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtEntrentamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblEntrenamiento))
+                .addGap(29, 29, 29)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(504, Short.MAX_VALUE))
+                .addContainerGap(586, Short.MAX_VALUE))
         );
 
         pack();
@@ -247,16 +265,17 @@ public class entrenamiento extends javax.swing.JDialog {
     }
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup grpTipo;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JLabel lblCodigo;
     private javax.swing.JLabel lblEntrenamiento;
     private javax.swing.JLabel lblTipo;
+    private javax.swing.JRadioButton rdoCrossfit;
+    private javax.swing.JRadioButton rdoFisico;
+    private javax.swing.JRadioButton rdoFuerza;
+    private javax.swing.JRadioButton rdoFuncional;
+    private javax.swing.JRadioButton rdoMuscular;
+    private javax.swing.JRadioButton rdoRunning;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtEntrentamiento;
     // End of variables declaration//GEN-END:variables
