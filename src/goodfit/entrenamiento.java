@@ -35,7 +35,7 @@ public class entrenamiento extends javax.swing.JDialog {
         txtCodigo = new javax.swing.JTextField();
         lblEntrenamiento = new javax.swing.JLabel();
         txtEntrenamiento = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
+        jPanelTipo = new javax.swing.JPanel();
         lblTipo = new javax.swing.JLabel();
         rdoMuscular = new javax.swing.JRadioButton();
         rdoFuncional = new javax.swing.JRadioButton();
@@ -43,6 +43,15 @@ public class entrenamiento extends javax.swing.JDialog {
         rdoFuerza = new javax.swing.JRadioButton();
         rdoRunning = new javax.swing.JRadioButton();
         rdoFisico = new javax.swing.JRadioButton();
+        spnFecha = new javax.swing.JSpinner();
+        lblFecha = new javax.swing.JLabel();
+        lblEntrenador = new javax.swing.JLabel();
+        txtEntrenador = new javax.swing.JTextField();
+        lblTelefono = new javax.swing.JLabel();
+        txtTelefono = new javax.swing.JTextField();
+        lblPrecio = new javax.swing.JLabel();
+        txtPrecio = new javax.swing.JTextField();
+        lblEuro = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setName("Form"); // NOI18N
@@ -69,8 +78,8 @@ public class entrenamiento extends javax.swing.JDialog {
             }
         });
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.setName("jPanel1"); // NOI18N
+        jPanelTipo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanelTipo.setName("jPanelTipo"); // NOI18N
 
         lblTipo.setText(resourceMap.getString("lblTipo.text")); // NOI18N
         lblTipo.setName("lblTipo"); // NOI18N
@@ -99,17 +108,17 @@ public class entrenamiento extends javax.swing.JDialog {
         rdoFisico.setText(resourceMap.getString("rdoFisico.text")); // NOI18N
         rdoFisico.setName("rdoFisico"); // NOI18N
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelTipoLayout = new javax.swing.GroupLayout(jPanelTipo);
+        jPanelTipo.setLayout(jPanelTipoLayout);
+        jPanelTipoLayout.setHorizontalGroup(
+            jPanelTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTipoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanelTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelTipoLayout.createSequentialGroup()
                         .addComponent(lblTipo)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanelTipoLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(rdoMuscular)
                         .addGap(18, 18, 18)
@@ -124,12 +133,12 @@ public class entrenamiento extends javax.swing.JDialog {
                         .addComponent(rdoFisico)
                         .addGap(0, 60, Short.MAX_VALUE))))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jPanelTipoLayout.setVerticalGroup(
+            jPanelTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTipoLayout.createSequentialGroup()
                 .addComponent(lblTipo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rdoMuscular)
                     .addComponent(rdoFuncional)
                     .addComponent(rdoCrossfit)
@@ -138,6 +147,54 @@ public class entrenamiento extends javax.swing.JDialog {
                     .addComponent(rdoFisico))
                 .addGap(0, 18, Short.MAX_VALUE))
         );
+
+        spnFecha.setModel(new javax.swing.SpinnerDateModel());
+        spnFecha.setEditor(new javax.swing.JSpinner.DateEditor(spnFecha, "dd/MM/yyyy"));
+        spnFecha.setName("spnFecha"); // NOI18N
+
+        lblFecha.setText(resourceMap.getString("lblFecha.text")); // NOI18N
+        lblFecha.setName("lblFecha"); // NOI18N
+
+        lblEntrenador.setText(resourceMap.getString("lblEntrenador.text")); // NOI18N
+        lblEntrenador.setName("lblEntrenador"); // NOI18N
+
+        txtEntrenador.setText(resourceMap.getString("txtEntrenador.text")); // NOI18N
+        txtEntrenador.setName("txtEntrenador"); // NOI18N
+        txtEntrenador.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtEntrenadorKeyTyped(evt);
+            }
+        });
+
+        lblTelefono.setText(resourceMap.getString("lblTelefono.text")); // NOI18N
+        lblTelefono.setName("lblTelefono"); // NOI18N
+
+        txtTelefono.setText(resourceMap.getString("txtTelefono.text")); // NOI18N
+        txtTelefono.setName("txtTelefono"); // NOI18N
+        txtTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelefonoKeyTyped(evt);
+            }
+        });
+
+        lblPrecio.setText(resourceMap.getString("lblPrecio.text")); // NOI18N
+        lblPrecio.setName("lblPrecio"); // NOI18N
+
+        txtPrecio.setText(resourceMap.getString("txtPrecio.text")); // NOI18N
+        txtPrecio.setName("txtPrecio"); // NOI18N
+        txtPrecio.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPrecioFocusLost(evt);
+            }
+        });
+        txtPrecio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPrecioKeyTyped(evt);
+            }
+        });
+
+        lblEuro.setText(resourceMap.getString("lblEuro.text")); // NOI18N
+        lblEuro.setName("lblEuro"); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -156,8 +213,33 @@ public class entrenamiento extends javax.swing.JDialog {
                         .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(428, 428, 428))
             .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jPanelTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblFecha)
+                        .addGap(18, 18, 18)
+                        .addComponent(spnFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(lblTelefono)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(lblEntrenador)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtEntrenador, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblPrecio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblEuro)))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -172,8 +254,25 @@ public class entrenamiento extends javax.swing.JDialog {
                     .addComponent(txtEntrenamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblEntrenamiento))
                 .addGap(29, 29, 29)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(586, Short.MAX_VALUE))
+                .addComponent(jPanelTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblFecha)
+                    .addComponent(spnFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(56, 56, 56)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEntrenador)
+                    .addComponent(txtEntrenador, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTelefono)
+                    .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPrecio)
+                    .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblEuro))
+                .addContainerGap(286, Short.MAX_VALUE))
         );
 
         pack();
@@ -197,15 +296,66 @@ public class entrenamiento extends javax.swing.JDialog {
 
     private void txtEntrenamientoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEntrenamientoKeyTyped
         // TODO add your handling code here:
-                char car = evt.getKeyChar();
+      char car = evt.getKeyChar();
         if (!Character.isAlphabetic(car) && !Character.isDigit(car)){
             evt.consume();
              //System.out.println("No es un número o una letra");
         }
-        String codigo = this.txtEntrenamiento.getText();
-        if(codigo.length()>=10)
+        String ent = this.txtEntrenamiento.getText();
+        if(ent.length()>=10)
             evt.consume();
     }//GEN-LAST:event_txtEntrenamientoKeyTyped
+
+    private void txtEntrenadorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEntrenadorKeyTyped
+        // TODO add your handling code here:
+       char car = evt.getKeyChar();
+        if (!Character.isAlphabetic(car) && !Character.isDigit(car)){
+            evt.consume();
+             //System.out.println("No es un número o una letra");
+        }
+        String codigo = this.txtEntrenador.getText();
+        if(codigo.length()>=10)
+            evt.consume();
+    }//GEN-LAST:event_txtEntrenadorKeyTyped
+
+    private void txtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyTyped
+        // TODO add your handling code here:
+               char car = evt.getKeyChar();
+        if (!Character.isDigit(car)){
+            evt.consume();
+             //System.out.println("No es un número o una letra");
+        }
+        String tel = this.txtTelefono.getText();
+        if(tel.length()>=9)
+            evt.consume();
+    }//GEN-LAST:event_txtTelefonoKeyTyped
+
+    private void txtPrecioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPrecioKeyTyped
+        // TODO add your handling code here:
+          char car = evt.getKeyChar();
+          if (!Character.isDigit(car)){
+            evt.consume();
+             //System.out.println("No es un número o una letra");
+        }
+        String bono = this.txtPrecio.getText();
+        //char cent = bono.charAt(0);
+         if(bono.length()>=3)
+            evt.consume();
+         //else if (bono.length()==3 && cent>'2')
+           //  evt.consume();
+        //int bononum = Integer.parseInt(bono);	
+        //if(bononum>200)
+          //  evt.consume();
+    }//GEN-LAST:event_txtPrecioKeyTyped
+
+    private void txtPrecioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPrecioFocusLost
+        // TODO add your handling code here:
+               String bono = this.txtPrecio.getText();
+    
+        int bononum = Integer.parseInt(bono);	
+        if(bononum>200)
+          this.txtPrecio.setText("");
+    }//GEN-LAST:event_txtPrecioFocusLost
 
     /**
      * @param args the command line arguments
@@ -288,9 +438,14 @@ public class entrenamiento extends javax.swing.JDialog {
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup grpTipo;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanelTipo;
     private javax.swing.JLabel lblCodigo;
+    private javax.swing.JLabel lblEntrenador;
     private javax.swing.JLabel lblEntrenamiento;
+    private javax.swing.JLabel lblEuro;
+    private javax.swing.JLabel lblFecha;
+    private javax.swing.JLabel lblPrecio;
+    private javax.swing.JLabel lblTelefono;
     private javax.swing.JLabel lblTipo;
     private javax.swing.JRadioButton rdoCrossfit;
     private javax.swing.JRadioButton rdoFisico;
@@ -298,7 +453,11 @@ public class entrenamiento extends javax.swing.JDialog {
     private javax.swing.JRadioButton rdoFuncional;
     private javax.swing.JRadioButton rdoMuscular;
     private javax.swing.JRadioButton rdoRunning;
+    private javax.swing.JSpinner spnFecha;
     private javax.swing.JTextField txtCodigo;
+    private javax.swing.JTextField txtEntrenador;
     private javax.swing.JTextField txtEntrenamiento;
+    private javax.swing.JTextField txtPrecio;
+    private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }
