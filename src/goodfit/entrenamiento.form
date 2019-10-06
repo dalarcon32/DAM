@@ -82,6 +82,11 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanelUbicacion" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnAceptar" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace pref="29" max="32767" attributes="0"/>
@@ -103,7 +108,7 @@
               </Group>
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Component id="jPanelTipo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblFecha" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="spnFecha" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -124,9 +129,20 @@
                   <Component id="txtPrecio" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="lblEuro" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jPanelUbicacion" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="68" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jPanelUbicacion" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="55" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                      <Component id="btnAceptar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -174,7 +190,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
@@ -183,18 +199,29 @@
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                          <Component id="rdoMuscular" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="rdoFuncional" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="rdoCrossfit" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-                          <Component id="rdoFuerza" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="rdoRunning" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                          <Component id="rdoFisico" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="60" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="rdoMuscular" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="rdoFisico" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                                  <Component id="rdoCrossfit" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                                  <Component id="rdoFuerza" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="rdoRunning" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="rdoFuncional" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="41" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="34" pref="34" max="-2" attributes="0"/>
+                                  <Component id="lblArea" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Component id="cmbArea" min="-2" pref="169" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
@@ -207,13 +234,18 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="rdoMuscular" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="rdoFuncional" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="rdoCrossfit" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="rdoFuerza" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="rdoRunning" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="rdoFisico" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="rdoFuncional" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="0" pref="18" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="cmbArea" alignment="3" max="32767" attributes="0"/>
+                      <Component id="lblArea" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -233,6 +265,9 @@
             <Property name="text" type="java.lang.String" resourceKey="rdoMuscular.text"/>
             <Property name="name" type="java.lang.String" value="rdoMuscular" noResource="true"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdoMuscularActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="rdoFuncional">
           <Properties>
@@ -242,6 +277,9 @@
             <Property name="text" type="java.lang.String" resourceKey="rdoFuncional.text"/>
             <Property name="name" type="java.lang.String" value="rdoFuncional" noResource="true"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdoFuncionalActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="rdoCrossfit">
           <Properties>
@@ -251,6 +289,9 @@
             <Property name="text" type="java.lang.String" resourceKey="rdoCrossfit.text"/>
             <Property name="name" type="java.lang.String" value="rdoCrossfit" noResource="true"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdoCrossfitActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="rdoFuerza">
           <Properties>
@@ -260,6 +301,9 @@
             <Property name="text" type="java.lang.String" resourceKey="rdoFuerza.text"/>
             <Property name="name" type="java.lang.String" value="rdoFuerza" noResource="true"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdoFuerzaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="rdoRunning">
           <Properties>
@@ -269,6 +313,9 @@
             <Property name="text" type="java.lang.String" resourceKey="rdoRunning.text"/>
             <Property name="name" type="java.lang.String" value="rdoRunning" noResource="true"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdoRunningActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="rdoFisico">
           <Properties>
@@ -277,6 +324,24 @@
             </Property>
             <Property name="text" type="java.lang.String" resourceKey="rdoFisico.text"/>
             <Property name="name" type="java.lang.String" value="rdoFisico" noResource="true"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdoFisicoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cmbArea">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new javax.swing.DefaultComboBoxModel(new String[] { &quot;&quot;, &quot;Tren Superior&quot;, &quot;Tren Inferior&quot;, &quot;Tronco&quot;, &quot;Core&quot; })" type="code"/>
+            </Property>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="name" type="java.lang.String" value="cmbArea" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblArea">
+          <Properties>
+            <Property name="text" type="java.lang.String" resourceKey="lblArea.text"/>
+            <Property name="name" type="java.lang.String" value="lblArea" noResource="true"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -483,5 +548,17 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JButton" name="btnCancelar">
+      <Properties>
+        <Property name="text" type="java.lang.String" resourceKey="btnCancelar.text"/>
+        <Property name="name" type="java.lang.String" value="btnCancelar" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAceptar">
+      <Properties>
+        <Property name="text" type="java.lang.String" resourceKey="btnAceptar.text"/>
+        <Property name="name" type="java.lang.String" value="btnAceptar" noResource="true"/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>

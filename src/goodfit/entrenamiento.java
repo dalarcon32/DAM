@@ -43,6 +43,8 @@ public class entrenamiento extends javax.swing.JDialog {
         rdoFuerza = new javax.swing.JRadioButton();
         rdoRunning = new javax.swing.JRadioButton();
         rdoFisico = new javax.swing.JRadioButton();
+        cmbArea = new javax.swing.JComboBox();
+        lblArea = new javax.swing.JLabel();
         spnFecha = new javax.swing.JSpinner();
         lblFecha = new javax.swing.JLabel();
         lblEntrenador = new javax.swing.JLabel();
@@ -61,6 +63,8 @@ public class entrenamiento extends javax.swing.JDialog {
         chbMultifuncion = new javax.swing.JCheckBox();
         chbPalancas = new javax.swing.JCheckBox();
         chbPlacas = new javax.swing.JCheckBox();
+        btnCancelar = new javax.swing.JButton();
+        btnAceptar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setName("Form"); // NOI18N
@@ -96,26 +100,63 @@ public class entrenamiento extends javax.swing.JDialog {
         grpTipo.add(rdoMuscular);
         rdoMuscular.setText(resourceMap.getString("rdoMuscular.text")); // NOI18N
         rdoMuscular.setName("rdoMuscular"); // NOI18N
+        rdoMuscular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdoMuscularActionPerformed(evt);
+            }
+        });
 
         grpTipo.add(rdoFuncional);
         rdoFuncional.setText(resourceMap.getString("rdoFuncional.text")); // NOI18N
         rdoFuncional.setName("rdoFuncional"); // NOI18N
+        rdoFuncional.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdoFuncionalActionPerformed(evt);
+            }
+        });
 
         grpTipo.add(rdoCrossfit);
         rdoCrossfit.setText(resourceMap.getString("rdoCrossfit.text")); // NOI18N
         rdoCrossfit.setName("rdoCrossfit"); // NOI18N
+        rdoCrossfit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdoCrossfitActionPerformed(evt);
+            }
+        });
 
         grpTipo.add(rdoFuerza);
         rdoFuerza.setText(resourceMap.getString("rdoFuerza.text")); // NOI18N
         rdoFuerza.setName("rdoFuerza"); // NOI18N
+        rdoFuerza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdoFuerzaActionPerformed(evt);
+            }
+        });
 
         grpTipo.add(rdoRunning);
         rdoRunning.setText(resourceMap.getString("rdoRunning.text")); // NOI18N
         rdoRunning.setName("rdoRunning"); // NOI18N
+        rdoRunning.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdoRunningActionPerformed(evt);
+            }
+        });
 
         grpTipo.add(rdoFisico);
         rdoFisico.setText(resourceMap.getString("rdoFisico.text")); // NOI18N
         rdoFisico.setName("rdoFisico"); // NOI18N
+        rdoFisico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdoFisicoActionPerformed(evt);
+            }
+        });
+
+        cmbArea.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "Tren Superior", "Tren Inferior", "Tronco", "Core" }));
+        cmbArea.setEnabled(false);
+        cmbArea.setName("cmbArea"); // NOI18N
+
+        lblArea.setText(resourceMap.getString("lblArea.text")); // NOI18N
+        lblArea.setName("lblArea"); // NOI18N
 
         javax.swing.GroupLayout jPanelTipoLayout = new javax.swing.GroupLayout(jPanelTipo);
         jPanelTipo.setLayout(jPanelTipoLayout);
@@ -129,18 +170,26 @@ public class entrenamiento extends javax.swing.JDialog {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanelTipoLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(rdoMuscular)
-                        .addGap(18, 18, 18)
-                        .addComponent(rdoFuncional)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rdoCrossfit)
-                        .addGap(63, 63, 63)
-                        .addComponent(rdoFuerza)
-                        .addGap(18, 18, 18)
-                        .addComponent(rdoRunning)
-                        .addGap(37, 37, 37)
-                        .addComponent(rdoFisico)
-                        .addGap(0, 60, Short.MAX_VALUE))))
+                        .addGroup(jPanelTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelTipoLayout.createSequentialGroup()
+                                .addComponent(rdoMuscular)
+                                .addGap(18, 18, 18)
+                                .addComponent(rdoFisico)
+                                .addGap(51, 51, 51)
+                                .addComponent(rdoCrossfit)
+                                .addGap(63, 63, 63)
+                                .addComponent(rdoFuerza)
+                                .addGap(18, 18, 18)
+                                .addComponent(rdoRunning)
+                                .addGap(18, 18, 18)
+                                .addComponent(rdoFuncional)
+                                .addGap(0, 41, Short.MAX_VALUE))
+                            .addGroup(jPanelTipoLayout.createSequentialGroup()
+                                .addGap(34, 34, 34)
+                                .addComponent(lblArea)
+                                .addGap(33, 33, 33)
+                                .addComponent(cmbArea, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
         );
         jPanelTipoLayout.setVerticalGroup(
             jPanelTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,12 +198,16 @@ public class entrenamiento extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rdoMuscular)
-                    .addComponent(rdoFuncional)
                     .addComponent(rdoCrossfit)
                     .addComponent(rdoFuerza)
                     .addComponent(rdoRunning)
-                    .addComponent(rdoFisico))
-                .addGap(0, 18, Short.MAX_VALUE))
+                    .addComponent(rdoFisico)
+                    .addComponent(rdoFuncional))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmbArea)
+                    .addComponent(lblArea))
+                .addContainerGap())
         );
 
         spnFecha.setModel(new javax.swing.SpinnerDateModel());
@@ -291,6 +344,12 @@ public class entrenamiento extends javax.swing.JDialog {
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
+        btnCancelar.setText(resourceMap.getString("btnCancelar.text")); // NOI18N
+        btnCancelar.setName("btnCancelar"); // NOI18N
+
+        btnAceptar.setText(resourceMap.getString("btnAceptar.text")); // NOI18N
+        btnAceptar.setName("btnAceptar"); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -337,7 +396,11 @@ public class entrenamiento extends javax.swing.JDialog {
                         .addComponent(lblEuro))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanelUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanelUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(130, 130, 130)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnCancelar)
+                            .addComponent(btnAceptar))))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -353,7 +416,7 @@ public class entrenamiento extends javax.swing.JDialog {
                     .addComponent(lblEntrenamiento))
                 .addGap(29, 29, 29)
                 .addComponent(jPanelTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblFecha)
                     .addComponent(spnFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -370,9 +433,17 @@ public class entrenamiento extends javax.swing.JDialog {
                     .addComponent(lblPrecio)
                     .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblEuro))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanelUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanelUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(55, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCancelar)
+                        .addGap(68, 68, 68)
+                        .addComponent(btnAceptar)
+                        .addGap(53, 53, 53))))
         );
 
         pack();
@@ -495,6 +566,38 @@ public class entrenamiento extends javax.swing.JDialog {
         
     }//GEN-LAST:event_cmbUbicacionActionPerformed
 
+    private void rdoMuscularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoMuscularActionPerformed
+           if(rdoMuscular.isSelected())
+               cmbArea.setEnabled(true);// TODO add your handling code here:
+    }//GEN-LAST:event_rdoMuscularActionPerformed
+
+    private void rdoFisicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoFisicoActionPerformed
+        // TODO add your handling code here:
+               if(rdoFisico.isSelected())
+               cmbArea.setEnabled(true);
+    }//GEN-LAST:event_rdoFisicoActionPerformed
+
+    private void rdoCrossfitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoCrossfitActionPerformed
+        // TODO add your handling code here:
+            if(rdoCrossfit.isSelected())
+               cmbArea.setEnabled(false);
+    }//GEN-LAST:event_rdoCrossfitActionPerformed
+
+    private void rdoFuerzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoFuerzaActionPerformed
+             if(rdoFuerza.isSelected())
+               cmbArea.setEnabled(false);// TODO add your handling code here:
+    }//GEN-LAST:event_rdoFuerzaActionPerformed
+
+    private void rdoRunningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoRunningActionPerformed
+                    if(rdoRunning.isSelected())
+               cmbArea.setEnabled(false); // TODO add your handling code here:
+    }//GEN-LAST:event_rdoRunningActionPerformed
+
+    private void rdoFuncionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoFuncionalActionPerformed
+             if(rdoFuncional.isSelected())
+               cmbArea.setEnabled(false);        // TODO add your handling code here:
+    }//GEN-LAST:event_rdoFuncionalActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -599,16 +702,20 @@ public class entrenamiento extends javax.swing.JDialog {
     }
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAceptar;
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JCheckBox chbBancos;
     private javax.swing.JCheckBox chbBicicleta;
     private javax.swing.JCheckBox chbCinta;
     private javax.swing.JCheckBox chbMultifuncion;
     private javax.swing.JCheckBox chbPalancas;
     private javax.swing.JCheckBox chbPlacas;
+    private javax.swing.JComboBox cmbArea;
     private javax.swing.JComboBox cmbUbicacion;
     private javax.swing.ButtonGroup grpTipo;
     private javax.swing.JPanel jPanelTipo;
     private javax.swing.JPanel jPanelUbicacion;
+    private javax.swing.JLabel lblArea;
     private javax.swing.JLabel lblCodigo;
     private javax.swing.JLabel lblEntrenador;
     private javax.swing.JLabel lblEntrenamiento;
