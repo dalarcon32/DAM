@@ -34,7 +34,7 @@ public class entrenamiento extends javax.swing.JDialog {
         lblCodigo = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
         lblEntrenamiento = new javax.swing.JLabel();
-        txtEntrentamiento = new javax.swing.JTextField();
+        txtEntrenamiento = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         lblTipo = new javax.swing.JLabel();
         rdoMuscular = new javax.swing.JRadioButton();
@@ -53,11 +53,21 @@ public class entrenamiento extends javax.swing.JDialog {
 
         txtCodigo.setText(resourceMap.getString("txtCodigo.text")); // NOI18N
         txtCodigo.setName("txtCodigo"); // NOI18N
+        txtCodigo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCodigoKeyTyped(evt);
+            }
+        });
 
         lblEntrenamiento.setText(resourceMap.getString("lblEntrenamiento.text")); // NOI18N
         lblEntrenamiento.setName("lblEntrenamiento"); // NOI18N
 
-        txtEntrentamiento.setName("txtEntrentamiento"); // NOI18N
+        txtEntrenamiento.setName("txtEntrenamiento"); // NOI18N
+        txtEntrenamiento.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtEntrenamientoKeyTyped(evt);
+            }
+        });
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setName("jPanel1"); // NOI18N
@@ -139,7 +149,7 @@ public class entrenamiento extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblEntrenamiento)
                         .addGap(39, 39, 39)
-                        .addComponent(txtEntrentamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtEntrenamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblCodigo)
                         .addGap(39, 39, 39)
@@ -159,7 +169,7 @@ public class entrenamiento extends javax.swing.JDialog {
                     .addComponent(lblCodigo))
                 .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtEntrentamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEntrenamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblEntrenamiento))
                 .addGap(29, 29, 29)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -181,9 +191,21 @@ public class entrenamiento extends javax.swing.JDialog {
              //System.out.println("No es un número o una letra");
         }
         String codigo = this.txtCodigo.getText();
-        if(codigo.length()>5)
+        if(codigo.length()>=5)
             evt.consume();
     }//GEN-LAST:event_txtCodigoKeyTyped
+
+    private void txtEntrenamientoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEntrenamientoKeyTyped
+        // TODO add your handling code here:
+                char car = evt.getKeyChar();
+        if (!Character.isAlphabetic(car) && !Character.isDigit(car)){
+            evt.consume();
+             //System.out.println("No es un número o una letra");
+        }
+        String codigo = this.txtEntrenamiento.getText();
+        if(codigo.length()>=10)
+            evt.consume();
+    }//GEN-LAST:event_txtEntrenamientoKeyTyped
 
     /**
      * @param args the command line arguments
@@ -277,6 +299,6 @@ public class entrenamiento extends javax.swing.JDialog {
     private javax.swing.JRadioButton rdoMuscular;
     private javax.swing.JRadioButton rdoRunning;
     private javax.swing.JTextField txtCodigo;
-    private javax.swing.JTextField txtEntrentamiento;
+    private javax.swing.JTextField txtEntrenamiento;
     // End of variables declaration//GEN-END:variables
 }
