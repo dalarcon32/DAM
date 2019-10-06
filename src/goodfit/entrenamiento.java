@@ -5,6 +5,8 @@
  */
 package goodfit;
 
+import javax.swing.JDialog;
+import javax.swing.JFrame;
 import org.jdesktop.application.Action;
 
 /**
@@ -70,6 +72,7 @@ public class entrenamiento extends javax.swing.JDialog {
         setName("Form"); // NOI18N
 
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(goodfit.GoodFitApp.class).getContext().getResourceMap(entrenamiento.class);
+        lblCodigo.setFont(resourceMap.getFont("lblCodigo.font")); // NOI18N
         lblCodigo.setText(resourceMap.getString("lblCodigo.text")); // NOI18N
         lblCodigo.setName("lblCodigo"); // NOI18N
 
@@ -81,6 +84,7 @@ public class entrenamiento extends javax.swing.JDialog {
             }
         });
 
+        lblEntrenamiento.setFont(resourceMap.getFont("lblEntrenamiento.font")); // NOI18N
         lblEntrenamiento.setText(resourceMap.getString("lblEntrenamiento.text")); // NOI18N
         lblEntrenamiento.setName("lblEntrenamiento"); // NOI18N
 
@@ -94,6 +98,7 @@ public class entrenamiento extends javax.swing.JDialog {
         jPanelTipo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanelTipo.setName("jPanelTipo"); // NOI18N
 
+        lblTipo.setFont(resourceMap.getFont("lblTipo.font")); // NOI18N
         lblTipo.setText(resourceMap.getString("lblTipo.text")); // NOI18N
         lblTipo.setName("lblTipo"); // NOI18N
 
@@ -261,6 +266,7 @@ public class entrenamiento extends javax.swing.JDialog {
         jPanelUbicacion.setBorder(new javax.swing.border.MatteBorder(null));
         jPanelUbicacion.setName("jPanelUbicacion"); // NOI18N
 
+        lblUbicacion.setFont(resourceMap.getFont("lblUbicacion.font")); // NOI18N
         lblUbicacion.setText(resourceMap.getString("lblUbicacion.text")); // NOI18N
         lblUbicacion.setName("lblUbicacion"); // NOI18N
 
@@ -344,6 +350,8 @@ public class entrenamiento extends javax.swing.JDialog {
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
+        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(goodfit.GoodFitApp.class).getContext().getActionMap(entrenamiento.class, this);
+        btnCancelar.setAction(actionMap.get("Cancelar")); // NOI18N
         btnCancelar.setText(resourceMap.getString("btnCancelar.text")); // NOI18N
         btnCancelar.setName("btnCancelar"); // NOI18N
 
@@ -397,11 +405,11 @@ public class entrenamiento extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanelUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(130, 130, 130)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnCancelar)
-                            .addComponent(btnAceptar))))
-                .addContainerGap(29, Short.MAX_VALUE))
+                        .addGap(35, 35, 35)
+                        .addComponent(btnCancelar)
+                        .addGap(37, 37, 37)
+                        .addComponent(btnAceptar)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -437,13 +445,13 @@ public class entrenamiento extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanelUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(55, Short.MAX_VALUE))
+                        .addContainerGap(71, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCancelar)
-                        .addGap(68, 68, 68)
-                        .addComponent(btnAceptar)
-                        .addGap(53, 53, 53))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnCancelar)
+                            .addComponent(btnAceptar))
+                        .addGap(109, 109, 109))))
         );
 
         pack();
@@ -700,6 +708,45 @@ public class entrenamiento extends javax.swing.JDialog {
          chbPlacas.setSelected(false) ;   
         }
     }
+
+    @Action
+    public void Cancelar() {
+        System.out.println("Cancelar");
+        int enc =0;
+        if(txtCodigo.getText()!="" || txtEntrenamiento.getText()!=""){
+          
+            enc=1;  
+            System.out.println("Cancelar 1: "+ enc+ txtCodigo.getText());
+        }
+        else if (rdoMuscular.isSelected() || rdoCrossfit.isSelected() || rdoFisico.isSelected() || rdoFuerza.isSelected() ||rdoFuncional.isSelected() || rdoRunning.isSelected())
+        {
+            enc=1;
+            System.out.println("Cancelar 2: "+ enc);
+            
+        }
+        else if (txtEntrenador.getText()!="" || txtTelefono.getText()!="" || txtPrecio.getText()!="")
+        {
+           System.out.println("Cancelar 3: "+ enc);
+            enc=1;
+        }
+
+        else if (cmbUbicacion.getSelectedIndex()!=0){
+            {
+                System.out.println("Cancelar 4: "+ enc);
+                enc=1;
+            }
+        }
+        System.out.println("Cancelar: "+ enc);
+        if(enc==1){
+             if (cancelar == null) {
+            JFrame mainFrame = GoodFitApp.getApplication().getMainFrame();
+            cancelar = new cancelar(mainFrame, true);
+            cancelar.setLocationRelativeTo(mainFrame);
+        }
+        GoodFitApp.getApplication().show(cancelar);
+        }
+            
+    }
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptar;
@@ -738,4 +785,5 @@ public class entrenamiento extends javax.swing.JDialog {
     private javax.swing.JTextField txtPrecio;
     private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
+    private JDialog cancelar;
 }

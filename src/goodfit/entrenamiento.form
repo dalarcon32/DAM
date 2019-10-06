@@ -82,14 +82,13 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanelUbicacion" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnAceptar" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="btnAceptar" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="29" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -133,14 +132,15 @@
                   <Group type="102" attributes="0">
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jPanelUbicacion" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="55" max="32767" attributes="0"/>
+                      <EmptySpace pref="71" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
-                      <Component id="btnAceptar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnAceptar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -150,6 +150,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="lblCodigo">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="lblCodigo.font"/>
         <Property name="text" type="java.lang.String" resourceKey="lblCodigo.text"/>
         <Property name="name" type="java.lang.String" value="lblCodigo" noResource="true"/>
       </Properties>
@@ -165,6 +166,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblEntrenamiento">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="lblEntrenamiento.font"/>
         <Property name="text" type="java.lang.String" resourceKey="lblEntrenamiento.text"/>
         <Property name="name" type="java.lang.String" value="lblEntrenamiento" noResource="true"/>
       </Properties>
@@ -253,6 +255,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="lblTipo">
           <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="lblTipo.font"/>
             <Property name="text" type="java.lang.String" resourceKey="lblTipo.text"/>
             <Property name="name" type="java.lang.String" value="lblTipo" noResource="true"/>
           </Properties>
@@ -489,6 +492,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="lblUbicacion">
           <Properties>
+            <Property name="font" type="java.awt.Font" resourceKey="lblUbicacion.font"/>
             <Property name="text" type="java.lang.String" resourceKey="lblUbicacion.text"/>
             <Property name="name" type="java.lang.String" value="lblUbicacion" noResource="true"/>
           </Properties>
@@ -550,6 +554,9 @@
     </Container>
     <Component class="javax.swing.JButton" name="btnCancelar">
       <Properties>
+        <Property name="action" type="javax.swing.Action" editor="org.netbeans.modules.swingapp.ActionEditor">
+          <action class="goodfit.entrenamiento" id="Cancelar" methodName="Cancelar"/>
+        </Property>
         <Property name="text" type="java.lang.String" resourceKey="btnCancelar.text"/>
         <Property name="name" type="java.lang.String" value="btnCancelar" noResource="true"/>
       </Properties>
