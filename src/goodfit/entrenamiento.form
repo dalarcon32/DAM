@@ -132,7 +132,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jPanelUbicacion" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="71" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
@@ -214,7 +214,7 @@
                                   <Component id="rdoRunning" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="rdoFuncional" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="41" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="34" pref="34" max="-2" attributes="0"/>
@@ -234,13 +234,15 @@
               <Group type="102" alignment="0" attributes="0">
                   <Component id="lblTipo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="rdoMuscular" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="rdoCrossfit" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="rdoFuerza" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="rdoRunning" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="rdoFisico" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="rdoFuncional" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="rdoMuscular" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rdoCrossfit" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rdoRunning" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rdoFisico" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rdoFuncional" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -460,7 +462,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="62" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -484,7 +486,7 @@
                       <Component id="chbPalancas" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="chbPlacas" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="40" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

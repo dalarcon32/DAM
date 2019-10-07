@@ -188,7 +188,7 @@ public class entrenamiento extends javax.swing.JDialog {
                                 .addComponent(rdoRunning)
                                 .addGap(18, 18, 18)
                                 .addComponent(rdoFuncional)
-                                .addGap(0, 41, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanelTipoLayout.createSequentialGroup()
                                 .addGap(34, 34, 34)
                                 .addComponent(lblArea)
@@ -201,13 +201,14 @@ public class entrenamiento extends javax.swing.JDialog {
             .addGroup(jPanelTipoLayout.createSequentialGroup()
                 .addComponent(lblTipo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rdoMuscular)
-                    .addComponent(rdoCrossfit)
-                    .addComponent(rdoFuerza)
-                    .addComponent(rdoRunning)
-                    .addComponent(rdoFisico)
-                    .addComponent(rdoFuncional))
+                .addGroup(jPanelTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rdoFuerza, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanelTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(rdoMuscular)
+                        .addComponent(rdoCrossfit)
+                        .addComponent(rdoRunning)
+                        .addComponent(rdoFisico)
+                        .addComponent(rdoFuncional)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbArea)
@@ -328,7 +329,7 @@ public class entrenamiento extends javax.swing.JDialog {
                         .addGroup(jPanelUbicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(chbCinta)
                             .addComponent(chbPlacas))))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelUbicacionLayout.setVerticalGroup(
             jPanelUbicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -347,7 +348,7 @@ public class entrenamiento extends javax.swing.JDialog {
                     .addComponent(chbMultifuncion)
                     .addComponent(chbPalancas)
                     .addComponent(chbPlacas))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(goodfit.GoodFitApp.class).getContext().getActionMap(entrenamiento.class, this);
@@ -451,7 +452,7 @@ public class entrenamiento extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanelUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(71, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -536,8 +537,16 @@ public class entrenamiento extends javax.swing.JDialog {
     private void txtPrecioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPrecioFocusLost
         // TODO add your handling code here:
                String bono = this.txtPrecio.getText();
-    
-        int bononum = Integer.parseInt(bono);	
+                     
+               
+        int bononum =0;
+        try {
+      bononum  = Integer.parseInt(bono);
+   }catch (NumberFormatException e){
+      // System.out.println("not a number"); 
+       
+   } 
+       
         if(bononum>200)
           this.txtPrecio.setText("");
     }//GEN-LAST:event_txtPrecioFocusLost
@@ -721,82 +730,111 @@ public class entrenamiento extends javax.swing.JDialog {
 
     @Action
     public void Cancelar() {
-        System.out.println("Cancelar");
+       // System.out.println("Cancelar");
         int enc =0;
-        if(txtCodigo.getText()!="" || txtEntrenamiento.getText()!=""){
+                  
+        if(txtCodigo.getText().length()!=0  || txtEntrenamiento.getText().length()!=0){
           
             enc=1;  
-            System.out.println("Cancelar 1: "+ enc+ txtCodigo.getText());
+            //System.out.println("Cancelar 1: "+ enc+ " -- "+txtEntrenamiento.getText().length());
         }
         else if (rdoMuscular.isSelected() || rdoCrossfit.isSelected() || rdoFisico.isSelected() || rdoFuerza.isSelected() ||rdoFuncional.isSelected() || rdoRunning.isSelected())
         {
             enc=1;
-            System.out.println("Cancelar 2: "+ enc);
+            //System.out.println("Cancelar 2: "+ enc);
             
         }
-        else if (txtEntrenador.getText()!="" || txtTelefono.getText()!="" || txtPrecio.getText()!="")
+        else if (txtEntrenador.getText().length()!=0 || txtTelefono.getText().length()!=0 || txtPrecio.getText().length()!=0)
         {
-           System.out.println("Cancelar 3: "+ enc);
-            enc=1;
+             enc=1;
+           // System.out.println("Cancelar 3: "+ enc+ " -- "+txtEntrenador.getText().length());
+          
         }
 
         else if (cmbUbicacion.getSelectedIndex()!=0){
             {
-                System.out.println("Cancelar 4: "+ enc);
                 enc=1;
+               // System.out.println("Cancelar 4: "+ enc);
+                
             }
         }
-        System.out.println("Cancelar: "+ enc);
+        //System.out.println("Cancelar: "+ enc);
         if(enc==1){
              if (cancelar == null) {
             JFrame mainFrame = GoodFitApp.getApplication().getMainFrame();
             cancelar = new cancelar(mainFrame, true);
             cancelar.setLocationRelativeTo(mainFrame);
+            
         }
         GoodFitApp.getApplication().show(cancelar);
+        if (GoodFitApp.getApplication().getbotonSi()==1){
+            GoodFitApp.getApplication().setBotonSi(0);
+            dispose();
         }
+        }else
+            dispose();
             
     }
 
     @Action
     public void Aceptar() {
-        System.out.println("Cancelar");
+         // System.out.println("Cancelar");
         int enc =0;
-        if(txtCodigo.getText()!="" || txtEntrenamiento.getText()!=""){
+                  
+        if(txtCodigo.getText().length()!=0 && txtEntrenamiento.getText().length()!=0){
           
             enc=1;  
-            System.out.println("Cancelar 1: "+ enc+ txtCodigo.getText());
+            //System.out.println("Cancelar 1: "+ enc+ " -- "+txtEntrenamiento.getText().length());
         }
-        else if (rdoMuscular.isSelected() || rdoCrossfit.isSelected() || rdoFisico.isSelected() || rdoFuerza.isSelected() ||rdoFuncional.isSelected() || rdoRunning.isSelected())
+        else
+            enc=0;  
+        if (rdoMuscular.isSelected() || rdoCrossfit.isSelected() || rdoFisico.isSelected() || rdoFuerza.isSelected() ||rdoFuncional.isSelected() || rdoRunning.isSelected())
         {
             enc=1;
-            System.out.println("Cancelar 2: "+ enc);
+            //System.out.println("Cancelar 2: "+ enc);
             
         }
-        else if (txtEntrenador.getText()!="" || txtTelefono.getText()!="" || txtPrecio.getText()!="")
+        else
+            enc=0;  
+        if (txtEntrenador.getText().length()!=0 && txtTelefono.getText().length()!=0 && txtPrecio.getText().length()!=0)
         {
-           System.out.println("Cancelar 3: "+ enc);
-            enc=1;
+             enc=1;
+           // System.out.println("Cancelar 3: "+ enc+ " -- "+txtEntrenador.getText().length());
+          
         }
 
-        else if (cmbUbicacion.getSelectedIndex()!=0){
-            {
-                System.out.println("Cancelar 4: "+ enc);
+        else
+            enc=0;  
+        if (cmbUbicacion.getSelectedIndex()!=0){
+            
                 enc=1;
-            }
-        }
-        System.out.println("aceptar: "+ enc);
+               // System.out.println("Cancelar 4: "+ enc);
+                
+            } else
+                enc=0;  
+        
+       // System.out.println("Cancelar: "+ enc);
         if(enc==1){
              if (aceptar == null) {
             JFrame mainFrame = GoodFitApp.getApplication().getMainFrame();
             aceptar = new aceptar(mainFrame, true);
             aceptar.setLocationRelativeTo(mainFrame);
+            
         }
         GoodFitApp.getApplication().show(aceptar);
+        dispose();
+        if (GoodFitApp.getApplication().getbotonSi()==1){
+            GoodFitApp.getApplication().setBotonSi(0);
+            dispose();
+        }
         }
     
     }
-   
+
+    /**
+     *
+     */
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptar;
     private javax.swing.JButton btnCancelar;
